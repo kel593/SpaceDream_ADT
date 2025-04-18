@@ -1,0 +1,37 @@
+#100 мм снаряды
+- type: entity
+  parent: ADTShipBattle100mmHEShell
+  id: ADTShipBattle100mmHEShellProximityFuse
+  name: 100 HE Shell Proximity Fuse
+  suffix: Proximity Fuse
+  components:
+  - type: CartridgeAmmo
+    proto: ADTShipBattleBullet100mmHEProximityFuseSD
+
+- type: entity
+  parent: ADTShipBattle100mmEMPShell
+  id: ADTShipBattle100mmEMPShellProximityFuse
+  name: 100 EMP Shell Proximity Fuse
+  suffix: Proximity Fuse
+  components:
+  - type: CartridgeAmmo
+    proto: ADTShipBattleBullet100mmEMPProximityFuseSD
+
+#155 мм снаряды
+- type: entity
+  parent: ADTShipBattle155mmHEShell
+  id: ADTShipBattle155mmHEShellProximityFuse
+  name: 155 HE Shell Proximity Fuse
+  suffix: Proximity Fuse
+  components:
+  - type: CartridgeAmmo
+    proto: ADTShipBattleBullet155mmHEProximityFuseSD
+
+- type: entity
+  parent: ADTShipBattle155mmEMPShell
+  id: ADTShipBattle155mmEMPShellProximityFuse
+  name: 155 EMP Shell Proximity Fuse
+  suffix: Proximity Fuse
+  components:
+  - type: CartridgeAmmo
+    proto: ADTShipBattleBullet155mmEMPProximityFuseSD
