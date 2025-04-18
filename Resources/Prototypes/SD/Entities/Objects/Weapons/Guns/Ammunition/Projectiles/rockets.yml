@@ -1,0 +1,89 @@
+- type: entity
+  id: BulletRocketSDAntiShipHE
+  name: РКС-800ИКФ Струна
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Weapons/Rockets/struna.rsi
+    layers:
+      - state: he
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: HardBomb
+    maxIntensity: 50
+    intensitySlope: 16
+    totalIntensity: 600
+  - type: TimedDespawn
+    lifetime: 50
+  - type: WorldLoader # Иначе на больших дистанциях ракета тупо застынет в космосе
+    radius: 1
+  - type: HeatSeeking
+    acceleration: 50
+    seekRange: 100
+    lockedIn: false # Отводится на ЛТЦ
+    rotationSpeed: 25
+
+- type: entity
+  id: BulletRocketSDAntiShipEMP
+  name: РКС-806ИКЭР Дуга
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Weapons/Rockets/struna.rsi
+    layers:
+      - state: emp
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 100
+    intensitySlope: 50
+    totalIntensity: 100
+  - type: EmpOnTrigger
+    range: 5
+    energyConsumption: 10000
+    disableDuration: 15
+  - type: TimedDespawn
+    lifetime: 50
+  - type: WorldLoader # Иначе на больших дистанциях ракета тупо застынет в космосе
+    radius: 1
+  - type: HeatSeeking
+    acceleration: 50
+    seekRange: 100
+    lockedIn: false # Отводится на ЛТЦ
+    rotationSpeed: 25
+
+- type: entity
+  id: BulletRocketSDAntiShipHESwitchblade
+  name: ПКР-875 Свичблейд
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Weapons/Rockets/switchblade.rsi
+    layers:
+      - state: he
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 100
+    intensitySlope: 10
+    totalIntensity: 250
+  - type: TimedDespawn
+    lifetime: 50
+  - type: WorldLoader # Иначе на больших дистанциях ракета тупо застынет в космосе
+    radius: 1
+  - type: HeatSeeking
+    acceleration: 5
+    seekRange: 100
+    lockedIn: true
+    rotationSpeed: 180
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 200
+        Structural: 1000
+    penetrationThreshold: 500
+    penetrationDamageTypeRequirement:
+    - Structural

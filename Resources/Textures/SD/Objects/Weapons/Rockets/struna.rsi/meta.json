@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "made by AngeloV for VXSS14",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "emp"
+    },
+    {
+      "name": "he"
+    },
+    {
+      "name": "inced"
+    },
+    {
+      "name": "thermobar"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+- type: entity
+  id: WeaponRocketSDAntiShipHEStruna
+  name: РКС-800ИКФ Струна # ХЕ
+  parent: ShuttleGunBase
+  description: Противокорабельная ракета средней дальности с базовым тепловым наведением. Отлично подойдёт против крупных неманевренных кораблей.
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Weapons/Rockets/struna.rsi
+    state: he
+  - type: TriggerOnSignal
+  - type: StaticPrice
+    price: 1000
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 50
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:ExplodeBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              ScrapGlass:
+                min: 1
+                max: 1
+              ScrapSteel:
+                min: 1
+                max: 2
+  - type: Anchorable
+  - type: Physics
+    bodyType: Dynamic
+  - type: DeleteOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 200
+    intensitySlope: 5
+    maxIntensity: 4
+  - type: Gun
+    projectileSpeed: 60
+    fireRate: 1
+    minAngle: 0
+    maxAngle: 1
+    soundGunshot:
+      path: /Audio/Effects/explosion_small3.ogg
+      params:
+        pitch: 0.8
+        volume: 5
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: BallisticAmmoProvider
+    cycleable: false
+    whitelist:
+      entities:
+        - CartridgeRocketSDAntiShipHE
+    capacity: 1
+    proto: CartridgeRocketSDAntiShipHE
+  - type: FlashOnTrigger
+    range: 10
+
+- type: entity
+  id: CartridgeRocketSDAntiShipHE
+  name: Ключи авторизации РКС-800ИКФ Струна # ЭМИ
+  categories: [ HideSpawnMenu ]
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/Scrap/generic.rsi
+    layers:
+    - state: glass-1
+      map: [ "base" ]
+  - type: CartridgeAmmo
+    proto: BulletRocketSDAntiShipHE
+    deleteOnSpawn: true
+
+- type: entity
+  id: WeaponRocketSDAntiShipEMPStruna
+  name: РКС-806ИКЭР Дуга
+  parent: WeaponRocketSDAntiShipHEStruna
+  description: Противокорабельная ракета средней дальности с базовым тепловым наведением. Отлично подойдёт для поражения электронных систем крупных кораблей.
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Weapons/Rockets/struna.rsi
+    state: emp
+  - type: StaticPrice
+    price: 1200
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 100
+    intensitySlope: 5
+    maxIntensity: 4
+  - type: Gun
+    projectileSpeed: 60
+    fireRate: 1
+    minAngle: 0
+    maxAngle: 1
+    soundGunshot:
+      path: /Audio/Effects/explosion_small3.ogg
+      params:
+        pitch: 0.8
+        volume: 5
+  - type: BallisticAmmoProvider
+    cycleable: false
+    whitelist:
+      entities:
+        - CartridgeRocketSDAntiShipEMP
+    capacity: 1
+    proto: CartridgeRocketSDAntiShipEMP
+
+- type: entity
+  id: CartridgeRocketSDAntiShipEMP
+  name: Ключи авторизации РКС-800ИКФ Струна
+  categories: [ HideSpawnMenu ]
+  parent: CartridgeRocketSDAntiShipHE
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRocketSDAntiShipEMP
+    deleteOnSpawn: true
+
+
+
+- type: entity
+  id: WeaponRocketSDAntiShipHESwitchblade
+  name: ПКР-875Ф Свичблейд-Ф # ХЕ
+  parent: ShuttleGunBase
+  description: Он же выкидной ножичек. Создатели не смогли транслитерировать это на панславянский, поэтому теперь он называется так. Мелкий, дешёвый, быстрый. Работает отлично против, наверное, всего.
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Weapons/Rockets/switchblade.rsi
+    state: he
+  - type: TriggerOnSignal
+  - type: StaticPrice
+    price: 600
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 50
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 30
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:ExplodeBehavior
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              ScrapGlass:
+                min: 1
+                max: 1
+              ScrapSteel:
+                min: 1
+                max: 2
+  - type: Anchorable
+  - type: Physics
+    bodyType: Dynamic
+  - type: DeleteOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 50
+    intensitySlope: 1
+    maxIntensity: 50
+  - type: Gun
+    projectileSpeed: 25
+    fireRate: 1
+    minAngle: 0
+    maxAngle: 1
+    soundGunshot:
+      path: /Audio/Effects/explosion_small3.ogg
+      params:
+        pitch: 1.5
+        volume: 5
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: BallisticAmmoProvider
+    cycleable: false
+    whitelist:
+      entities:
+        - CartridgeRocketSDAntiShipHESwitchblade
+    capacity: 1
+    proto: CartridgeRocketSDAntiShipHESwitchblade
+  - type: FlashOnTrigger
+    range: 5
+
+- type: entity
+  id: CartridgeRocketSDAntiShipHESwitchblade
+  name: Ключи авторизации ПКР-875Ф Свичблейд-Ф # ХЕ
+  categories: [ HideSpawnMenu ]
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/Scrap/generic.rsi
+    layers:
+    - state: glass-1
+      map: [ "base" ]
+  - type: CartridgeAmmo
+    proto: BulletRocketSDAntiShipHESwitchblade
+    deleteOnSpawn: true
