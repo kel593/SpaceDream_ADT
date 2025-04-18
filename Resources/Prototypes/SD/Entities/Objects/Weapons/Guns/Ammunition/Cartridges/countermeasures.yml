@@ -1,0 +1,19 @@
+# TODO: Диппольные отражатели
+
+- type: entity
+  id: HeatCountermeasuresA23SD
+  name: 23мм средства постановки инфракрасных помех
+  parent: BaseShellShotgun
+  components:
+  - type: Tag
+    tags:
+    - HeatCountermeasuresShell
+  - type: Sprite
+    layers:
+      - state: flare
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: HeatCountermeasuresA23PelletSD
+  - type: SpentAmmoVisuals
+    state: "flare"
