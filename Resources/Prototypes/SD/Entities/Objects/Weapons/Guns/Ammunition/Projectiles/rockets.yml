@@ -114,39 +114,26 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: ActiveTimerTrigger
-    timeRemaining: 0.1
   - type: Projectile
     damage:
       types:
         Blunt: 50
         Structural: 500
     deleteOnCollide: true
-  - type: TwoStageTrigger
-    triggerDelay: 0.2
-    components:
-      - type: HeatSeeking
-        acceleration: 10
-        seekRange: 500
-        lockedIn: true
-        rotationSpeed: 1
-      - type: SpawnOnTrigger
-        proto: NuclearFalloutAshSD
-      - type: ExplodeOnTrigger
-      - type: Explosive
-        explosionType: FireBomb
-        maxIntensity: 30
-        intensitySlope: 3
-        totalIntensity: 2000
-      # - type: TwoStageTrigger Это тут пока не нужно но оно работает вау!11
-      #   triggerDelay: 1
-      #   components:
-      #     - type: ExplodeOnTrigger
-      #     - type: Explosive
-      #       explosionType: HardBomb
-      #       maxIntensity: 100
-      #       intensitySlope: 35
-      #       totalIntensity: 350
+  - type: HeatSeeking
+    acceleration: 10
+    seekRange: 500
+    lockedIn: true
+    rotationSpeed: 1
+  - type: SpawnOnTrigger
+    proto: NuclearFalloutAshSD
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: FireBomb
+    maxIntensity: 30
+    intensitySlope: 3
+    totalIntensity: 2000
+  - type: DeleteOnTrigger
 
 - type: entity
   parent: ScatteringGrenadeBase
@@ -159,8 +146,7 @@
     state: ash
   - type: ScatteringGrenade
     fillPrototype: NuclearAshSD
-    capacity: 30
-    triggerContents: false
+    capacity: 100
     randomDistance: true
     randomAngle: true
     randomThrowDistanceMin: 10
