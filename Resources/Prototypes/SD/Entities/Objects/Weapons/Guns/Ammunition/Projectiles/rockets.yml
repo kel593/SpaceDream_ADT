@@ -60,10 +60,10 @@
     seekRange: 1000
     rotationSpeed: 200
     guidanceType: PredictiveGuidance
-    acceleration: 5
-    topSpeed: 50
+    acceleration: 40
+    topSpeed: 100
     initialSpeed: 10
-    FOV: 180
+    FOV: 90
     lockedIn: true
   - type: Destructible
     thresholds:
