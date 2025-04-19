@@ -33,6 +33,39 @@
         acts: ["Destruction"]
 
 - type: entity
+  id: BulletRocketSDAntiShipHEHMAT
+  name: РКС-100ИКФ Морозник
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Weapons/Rockets/struna.rsi
+    layers:
+      - state: he
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: HardBomb
+    maxIntensity: 50
+    intensitySlope: 16
+    totalIntensity: 600
+  - type: TimedDespawn
+    lifetime: 50
+  - type: WorldLoader # Иначе на больших дистанциях ракета тупо застынет в космосе
+    radius: 1
+  - type: HeatSeeking
+    acceleration: 1
+    seekRange: 1000
+    lockedIn: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
   id: BulletRocketSDAntiShipEMP
   name: РКС-806ИКЭР Дуга
   parent: BaseBulletTrigger

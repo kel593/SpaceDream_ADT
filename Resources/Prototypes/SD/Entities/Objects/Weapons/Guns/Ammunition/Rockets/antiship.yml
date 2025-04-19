@@ -124,6 +124,50 @@
     proto: BulletRocketSDAntiShipEMP
     deleteOnSpawn: true
 
+- type: entity
+  id: WeaponRocketSDAntiShipHEHMATStruna
+  name: РКС-100ИКФ Морозник
+  parent: WeaponRocketSDAntiShipHEStruna
+  description: Противокорабельная ракета средней дальности с ИК ГСН. Хорошо подходит для поражения маленьких целей.
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Weapons/Rockets/struna.rsi
+    state: inced
+  - type: StaticPrice
+    price: 10000
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 100
+    intensitySlope: 5
+    maxIntensity: 4
+  - type: Gun
+    projectileSpeed: 60
+    fireRate: 1
+    minAngle: 0
+    maxAngle: 1
+    soundGunshot:
+      path: /Audio/Effects/explosion_small3.ogg
+      params:
+        pitch: 0.8
+        volume: 5
+  - type: BallisticAmmoProvider
+    cycleable: false
+    whitelist:
+      entities:
+        - CartridgeRocketSDAntiShipHEHMAT
+    capacity: 1
+    proto: CartridgeRocketSDAntiShipHEHMAT
+
+- type: entity
+  id: CartridgeRocketSDAntiShipHEHMAT
+  name: Ключи авторизации РКС-100ИКФ Морозник
+  categories: [ HideSpawnMenu ]
+  parent: CartridgeRocketSDAntiShipHE
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRocketSDAntiShipHEHMAT
+    deleteOnSpawn: true
+
 
 
 - type: entity
