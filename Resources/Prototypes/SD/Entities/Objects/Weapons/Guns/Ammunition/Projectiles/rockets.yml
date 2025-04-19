@@ -91,3 +91,96 @@
         maxIntensity: 100
         intensitySlope: 35
         totalIntensity: 350
+
+- type: entity
+  id: BulletRocketSDAntiShipNuclear
+  name: РКС-20А Мята
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Weapons/Rockets/struna.rsi
+    layers:
+      - state: nuclear
+  - type: TimedDespawn
+    lifetime: 50
+  - type: WorldLoader # Иначе на больших дистанциях ракета тупо застынет в космосе
+    radius: 1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: ActiveTimerTrigger
+    timeRemaining: 0.1
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 50
+        Structural: 500
+    deleteOnCollide: true
+  - type: TwoStageTrigger
+    triggerDelay: 0.2
+    components:
+      - type: HeatSeeking
+        acceleration: 10
+        seekRange: 500
+        lockedIn: true
+        rotationSpeed: 1
+      - type: SpawnOnTrigger
+        proto: NuclearFalloutAshSD
+      - type: ExplodeOnTrigger
+      - type: Explosive
+        explosionType: FireBomb
+        maxIntensity: 30
+        intensitySlope: 3
+        totalIntensity: 2000
+      # - type: TwoStageTrigger Это тут пока не нужно но оно работает вау!11
+      #   triggerDelay: 1
+      #   components:
+      #     - type: ExplodeOnTrigger
+      #     - type: Explosive
+      #       explosionType: HardBomb
+      #       maxIntensity: 100
+      #       intensitySlope: 35
+      #       totalIntensity: 350
+
+- type: entity
+  parent: ScatteringGrenadeBase
+  id: NuclearFalloutAshSD
+  categories: [ HideSpawnMenu ]
+  name: ash
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/materials.rsi
+    state: ash
+  - type: ScatteringGrenade
+    fillPrototype: NuclearAshSD
+    capacity: 30
+    triggerContents: false
+    randomDistance: true
+    randomAngle: true
+    randomThrowDistanceMin: 10
+    randomThrowDistanceMax: 100
+  - type: SpawnOnTrigger
+    proto: ADTTritiumGasSpawner
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: DemolitionCharge
+    maxIntensity: 230
+    intensitySlope: 10
+    totalIntensity: 100000
+  - type: DeleteOnTrigger
+  - type: TriggerOnSpawn
+
+- type: entity
+  parent: Ash
+  id: NuclearAshSD
+  suffix: NUCLEAR
+  components:
+  - type: RadiationSource
+    slope: 0.03
+    intensity: 0.6

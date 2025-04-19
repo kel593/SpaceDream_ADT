@@ -207,3 +207,52 @@
   - type: CartridgeAmmo
     proto: BulletRocketSDAntiShipHESwitchblade
     deleteOnSpawn: true
+
+
+
+- type: entity
+  id: WeaponRocketSDAntiShipNuclearStruna
+  name: РКС-20ИКА Мята
+  parent: WeaponRocketSDAntiShipHEStruna
+  description: Противокорабельная ракета средней дальности с термоядерной боеголовкой и ИК ГСН. Реально неприятная и дорогая штука.
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Weapons/Rockets/struna.rsi
+    state: nuclear
+  - type: StaticPrice
+    price: 15000
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 200
+    intensitySlope: 5
+    maxIntensity: 4
+  - type: Gun
+    projectileSpeed: 150
+    fireRate: 1
+    minAngle: 0
+    maxAngle: 0
+    soundGunshot:
+      path: /Audio/Effects/explosion_small3.ogg
+      params:
+        pitch: 0.8
+        volume: 5
+  - type: BallisticAmmoProvider
+    cycleable: false
+    whitelist:
+      entities:
+        - CartridgeRocketSDAntiShipNuclear
+    capacity: 1
+    proto: CartridgeRocketSDAntiShipNuclear
+  - type: RadiationSource
+    slope: 0.3
+    intensity: 0.6
+
+- type: entity
+  id: CartridgeRocketSDAntiShipNuclear
+  name: Ключи авторизации РКС-20А Мята
+  categories: [ HideSpawnMenu ]
+  parent: CartridgeRocketSDAntiShipHE
+  components:
+  - type: CartridgeAmmo
+    proto: BulletRocketSDAntiShipNuclear
+    deleteOnSpawn: true
