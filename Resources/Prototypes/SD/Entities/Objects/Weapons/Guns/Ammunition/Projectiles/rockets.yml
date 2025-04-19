@@ -23,6 +23,14 @@
     seekRange: 100
     lockedIn: false # Отводится на ЛТЦ
     rotationSpeed: 25
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
   id: BulletRocketSDAntiShipEMP
@@ -53,6 +61,14 @@
     seekRange: 100
     lockedIn: false # Отводится на ЛТЦ
     rotationSpeed: 25
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
   id: BulletRocketSDAntiShipHESwitchblade
@@ -82,6 +98,14 @@
     penetrationDamageTypeRequirement:
     - Structural
     deleteOnCollide: false
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
   - type: TwoStageTrigger
     triggerDelay: 1
     components:
