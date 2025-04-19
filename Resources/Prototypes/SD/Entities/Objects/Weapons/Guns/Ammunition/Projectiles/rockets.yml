@@ -66,10 +66,10 @@
       - state: he
   - type: ExplodeOnTrigger
   - type: Explosive
-    explosionType: Default
+    explosionType: HardBomb
     maxIntensity: 100
-    intensitySlope: 10
-    totalIntensity: 250
+    intensitySlope: 35
+    totalIntensity: 350
   - type: TimedDespawn
     lifetime: 50
   - type: WorldLoader # Иначе на больших дистанциях ракета тупо застынет в космосе
