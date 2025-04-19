@@ -57,13 +57,13 @@
   - type: WorldLoader # Иначе на больших дистанциях ракета тупо застынет в космосе
     radius: 1
   - type: HeatSeeking
-    seekRange: 1000
+    seekRange: 500
     rotationSpeed: 200
     guidanceType: PredictiveGuidance
     acceleration: 40
     topSpeed: 100
     initialSpeed: 10
-    FOV: 90
+    FOV: 100
     lockedIn: true
   - type: Destructible
     thresholds:
