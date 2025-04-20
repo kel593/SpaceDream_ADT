@@ -19,13 +19,13 @@
   - type: WorldLoader # Иначе на больших дистанциях ракета тупо застынет в космосе
     radius: 1
   - type: HeatSeeking
-    seekRange: 150
-    rotationSpeed: 25
+    seekRange: 100
+    rotationSpeed: 3
     guidanceType: PurePursuit
     acceleration: 50
     topSpeed: 100
     initialSpeed: 50
-    FOV: 90
+    FOV: 60
     lockedIn: false
   - type: Destructible
     thresholds:
@@ -99,13 +99,13 @@
   - type: WorldLoader # Иначе на больших дистанциях ракета тупо застынет в космосе
     radius: 1
   - type: HeatSeeking
-    seekRange: 150
-    rotationSpeed: 25
+    seekRange: 100
+    rotationSpeed: 3
     guidanceType: PurePursuit
     acceleration: 50
     topSpeed: 100
     initialSpeed: 50
-    FOV: 90
+    FOV: 60
     lockedIn: false
   - type: Destructible
     thresholds:
@@ -131,9 +131,9 @@
   - type: WorldLoader # Иначе на больших дистанциях ракета тупо застынет в космосе
     radius: 1
   - type: HeatSeeking
-    seekRange: 100
-    rotationSpeed: 180
-    guidanceType: PurePursuit
+    seekRange: 50
+    rotationSpeed: 10
+    guidanceType: PredictiveGuidance
     acceleration: 10
     topSpeed: 200
     initialSpeed: 50
