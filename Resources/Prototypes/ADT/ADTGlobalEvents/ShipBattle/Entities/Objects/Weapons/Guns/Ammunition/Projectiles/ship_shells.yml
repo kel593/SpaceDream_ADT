@@ -24,9 +24,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-    - type: NpcFactionMember
-      factions:
-        - ProjectileTSFKMT
 
 #100 mm
 - type: entity
