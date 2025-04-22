@@ -363,7 +363,7 @@ public sealed partial class GunSystem : SharedGunSystem
         {
             RemoveShootable(uid);
             // TODO: Someone can probably yeet this a billion miles so need to pre-validate input somewhere up the call stack.
-            ThrowingSystem.TryThrow(uid, mapDirection, gun.ProjectileSpeedModified, user);
+            // ThrowingSystem.TryThrow(uid, mapDirection, gun.ProjectileSpeedModified, user); ADT-edit > removment removement idk how to wryte write it kekw
             return;
         }
 

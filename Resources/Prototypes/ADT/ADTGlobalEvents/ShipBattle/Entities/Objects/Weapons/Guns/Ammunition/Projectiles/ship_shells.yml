@@ -16,6 +16,17 @@
     damage: 75
   - type: TimedDespawn
     lifetime: 30
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - type: NpcFactionMember
+      factions:
+        - ProjectileTSFKMT
 
 #100 mm
 - type: entity
@@ -41,6 +52,17 @@
         Structural: 500
   - type: TimedDespawn
     lifetime: 30
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - type: NpcFactionMember
+      factions:
+        - ProjectileTSFKMT
 
 - type: entity
   id: ADTShipBattleBullet100mmEMP
@@ -64,6 +86,17 @@
     energy: 2.5
   - type: TimedDespawn
     lifetime: 30
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - type: NpcFactionMember
+      factions:
+        - ProjectileTSFKMT
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -96,6 +129,17 @@
   # - type: IFF
   #   flags: HideLabel
   #   color: "#ff0000"
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - type: NpcFactionMember
+      factions:
+        - ProjectileTSFKMT
 
 #100 mm
 - type: entity
@@ -121,6 +165,17 @@
         Structural: 500
   - type: TimedDespawn
     lifetime: 30
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - type: NpcFactionMember
+      factions:
+        - ProjectileTSFKMT
 
 - type: entity
   id: ADTShipBattleBullet155mmEMP
@@ -144,6 +199,17 @@
     energy: 4.5
   - type: TimedDespawn
     lifetime: 30
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - type: NpcFactionMember
+      factions:
+        - ProjectileTSFKMT
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -173,3 +239,14 @@
   #   totalIntensity: 50 # a ~2 tile radius
   #   intensitySlope: 10
   #   maxIntensity: 5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - type: NpcFactionMember
+      factions:
+        - ProjectileTSFKMT

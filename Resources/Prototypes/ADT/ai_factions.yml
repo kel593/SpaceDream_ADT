@@ -55,3 +55,18 @@
   - Revolutionary
   - Heretic # goob edit - heretics
   - Ursus
+
+- type: npcFaction
+  id: ProjectileTSFKMT
+
+- type: npcFaction
+  id: PointDefenseGunTSF
+  hostile:
+  - ProjectileTSFKMT
+  - KMT
+
+- type: npcFaction
+  id: PointDefenseGunKMT
+  hostile:
+  - ProjectileTSFKMT
+  - TSF

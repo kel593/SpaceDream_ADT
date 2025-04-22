@@ -65,6 +65,7 @@ public sealed partial class GunOperator : HTNOperator, IHtnConditionalShutdown
 
         var ranged = _entManager.EnsureComponent<NPCRangedCombatComponent>(blackboard.GetValue<EntityUid>(NPCBlackboard.Owner));
         ranged.Target = blackboard.GetValue<EntityUid>(TargetKey);
+        ranged.Advanced = blackboard.GetValueOrDefault<bool>("AdvancedTargeting", _entManager); // ADT-edit
         ranged.UseOpaqueForLOSChecks = UseOpaqueForLOSChecks;
 
         if (blackboard.TryGetValue<float>(NPCBlackboard.RotateSpeed, out var rotSpeed, _entManager))

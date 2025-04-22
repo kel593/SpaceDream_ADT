@@ -193,6 +193,7 @@
   components:
     - type: NpcFactionMember
       factions:
+        - PointDefenseGunKMT
         - KMT
     - type: IntrinsicRadioTransmitter
       channels:
@@ -285,7 +286,7 @@
       selectedMode: FullAuto
       availableModes:
         - FullAuto
-      soundGunshot: 
+      soundGunshot:
         collection: ADTShipBattle30mmGunFire
     - type: MagazineVisuals
       magState: mag
@@ -312,6 +313,12 @@
           2
         SoundTargetInLOS: !type:SoundPathSpecifier
           path: /Audio/Effects/double_beep.ogg
+        AdvancedTargeting: !type:Bool
+          true
+        RangedRange: !type:Single
+          60.0
+        VisionRadius: !type:Single
+          100.0
     - type: MouseRotator
       angleTolerance: 5
       rotationSpeed: 120
@@ -319,9 +326,10 @@
     - type: Icon
       sprite: ADT/ADTGlobalEvents/ShipBattle/Objects/Weapons/Guns/Turrets/large_shipguns_icon32x32.rsi
       state: ds30_kmt_icon
-    # - type: NpcFactionMember
-    #   factions:
-    #     - Syndicate
+    - type: NpcFactionMember
+      factions:
+        - PointDefenseGunKMT
+        - KMT
     - type: Explosive
       explosionType: Default
       maxIntensity: 10
@@ -341,9 +349,10 @@
   id: ADTds30TSF
   suffix: Space Battleships, TSF
   components:
-    # - type: NpcFactionMember
-    #   factions:
-    #     - NanoTrasen
+    - type: NpcFactionMember
+      factions:
+        - TSF
+        - PointDefenseGunTSF
     - type: Icon
       sprite: ADT/ADTGlobalEvents/ShipBattle/Objects/Weapons/Guns/Turrets/large_shipguns_icon32x32.rsi
       state: ds30_tsf_icon
@@ -553,9 +562,9 @@
   id: ADTd100KMT
   suffix: Space Battleships, KMT
   components:
-    # - type: NpcFactionMember
-    #   factions:
-    #     - Syndicate
+    - type: NpcFactionMember
+      factions:
+        - KMT
     - type: Icon
       sprite: ADT/ADTGlobalEvents/ShipBattle/Objects/Weapons/Guns/Turrets/large_shipguns_icon32x32.rsi
       state: d100_kmt_icon
@@ -573,9 +582,9 @@
   id: ADTd100TSF
   suffix: Space Battleships, TSF
   components:
-    # - type: NpcFactionMember
-    #   factions:
-    #     - NanoTrasen
+    - type: NpcFactionMember
+      factions:
+        - TSF
     - type: Sprite
       sprite: ADT/ADTGlobalEvents/ShipBattle/Objects/Weapons/Guns/Turrets/d100.rsi
       drawdepth: Mobs
@@ -628,9 +637,9 @@
   id: ADTMk155KMT
   suffix: Space Battleships, KMT
   components:
-    # - type: NpcFactionMember
-    #   factions:
-    #     - Syndicate
+    - type: NpcFactionMember
+      factions:
+        - KMT
     - type: Destructible
       thresholds:
         - trigger:
@@ -706,9 +715,9 @@
   id: ADTMk155TSF
   suffix: Space Battleships, TSF
   components:
-    # - type: NpcFactionMember
-    #   factions:
-    #     - NanoTrasen
+    - type: NpcFactionMember
+      factions:
+        - TSF
     - type: Sprite
       sprite: ADT/ADTGlobalEvents/ShipBattle/Objects/Weapons/Guns/Turrets/mk155.rsi
       drawdepth: Mobs
