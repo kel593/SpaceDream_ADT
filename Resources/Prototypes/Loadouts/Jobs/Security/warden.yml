@@ -32,6 +32,6 @@
     outerClothing: ClothingOuterWinterWarden
 
 - type: loadout # SD-Edit
-  id: WardenArmoredWinterCoatOld
+  id: SDWardenArmoredWinterCoatOld
   equipment:
-    outerClothing: ClothingOuterWinterWardenOld
+    outerClothing: SDClothingOuterWinterWardenOld
