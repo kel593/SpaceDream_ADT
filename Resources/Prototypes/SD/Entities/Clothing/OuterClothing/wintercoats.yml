@@ -1,8 +1,8 @@
 - type: entity
   parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoatToggleable, BaseSecurityContraband]
   id: SDClothingOuterWinterWardenOld
-  name: warden's armored winter coat
-  description: A sturdy, utilitarian winter coat designed to protect a warden from any brig-bound threats and hypothermic events.
+  name: зимняя бронекуртка смотрителя
+  description: Прочная, утилитарная зимняя куртка, предназначенная для защиты смотрителя от любых угроз, связанных с бригом и переохлаждением. Эта выглядит помятой.
   components:
   - type: Sprite
     sprite: SD/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
